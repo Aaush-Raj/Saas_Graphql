@@ -7,18 +7,17 @@ import TeamsCard from "../components/TeamsCard";
 import useMeasure from "react-use-measure";
 import { animate, motion, useMotionValue } from "framer-motion";
 
-const list: number[] = [0, 1, 0, 1, 0, 1, 0, 1, 0];
+const list: number[] = [0, 1, 0, 1, 0, 1, 0, 1, 0];// I know this might not be the best practice to animate this but just doing it for MVP
 
 const FAST_DURATION: number = 25;
-const SLOW_DURATION: number = 75;
+const SLOW_DURATION: number = 75; // when user hovers the cards , speed will be set to slow 
 
 const Home = () => {
   let [ref, { width }] = useMeasure();
 
-  const [duration, setDuration] = useState<number>(FAST_DURATION); // Type the useState hook
-  const [mustFinish, setMustFinish] = useState<boolean>(false); // Type the useState hook
-  const [rerender, setRerender] = useState<boolean>(false); // Type the useState hook
-
+  const [duration, setDuration] = useState<number>(FAST_DURATION); 
+  const [mustFinish, setMustFinish] = useState<boolean>(false); 
+  const [rerender, setRerender] = useState<boolean>(false);
   const xTranslation = useMotionValue(0);
 
   useEffect(() => {

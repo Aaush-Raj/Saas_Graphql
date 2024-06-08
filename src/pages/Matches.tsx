@@ -21,6 +21,7 @@ const GET_LAUNCHES= gql`
   }
 `;
 
+//Skeleton UI , I am showing this UI while the data is Loading
 const SkeletonLoading = () => (
   <div className="">
     <h1 className="text-center text-2xl my-2">SpaceX Launches</h1>
@@ -48,7 +49,7 @@ const SkeletonLoading = () => (
 
 const Matches = () => {
   const { loading, error, data } = useQuery(GET_LAUNCHES, {
-    client: spacexClient, // Use the AniList client
+    client: spacexClient, //Using spaceX graphql API here
   });
 
   if (loading) return <SkeletonLoading />;

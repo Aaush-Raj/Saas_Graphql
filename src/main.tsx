@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Sidebar from "./components/Sidebar.tsx";
@@ -29,8 +28,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-  <ApolloProvider client={spacexClient}> {/* Provide the SpaceX Apollo client */}
-    <ApolloProvider client={aniListClient}> {/* Provide the AniList Apollo client */}
+  <ApolloProvider client={spacexClient}>  
+    <ApolloProvider client={aniListClient}> 
       <RouterProvider router={router} />
     </ApolloProvider>
   </ApolloProvider>
